@@ -78,7 +78,6 @@ function Juego() {
     };
 
     const pasarSiguienteFase = () => {
-        // Si todos han jugado, determinar perdedor
         if (turno === numJugadores - 1) {
             determinarPerdedor();
         } else {
@@ -138,9 +137,9 @@ function Juego() {
             }
         }
         
-        // Después de rotar/quedarse, mostrar opción de carta extra al último jugador
+        
         if (turno === numJugadores - 1) {
-            // No hacer nada aquí, se manejará en el render
+            
         } else {
             setTurno(turno + 1);
         }
