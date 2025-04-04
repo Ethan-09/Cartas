@@ -110,7 +110,6 @@ function Juego() {
     };
 
     const repartirNuevasCartas = () => {
-        // Necesitamos (numJugadores + 1) cartas
         if (mazo.length < numJugadores + 1) {
             alert("¡No hay suficientes cartas en el mazo! Reiniciando juego...");
             setJuegoIniciado(false);

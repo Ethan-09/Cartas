@@ -40,6 +40,8 @@ import oros10 from "./imagenes/oros_10.png";
 import oros11 from "./imagenes/oros_11.png";
 import oros12 from "./imagenes/oros_12.png";
 import dorso from "./imagenes/dorso.png";
+import excalidraw from "./imagenes/excalidraw2.png";
+import photopea from "./imagenes/photopea.png";
 import "./Cartitas.css";
 import { useState, useEffect } from 'react';
 
@@ -138,17 +140,39 @@ function Game() {
       }
     }
   };
+  const limpiarJuego = () => {
+    setPaloSeleccionado("");
+    setCartasBarajadas([]);
+    setCartasVolteadas([]);
+    setCartasPareja([]);
+    setParesEncontrados(0);
+  };
 
   return (
     <div>
       {mostrarPopup ? (
+
         <div className='popup'>
           <h1>¿Quieres ver mis cartas de baraja 
+            <a href="https://www.youtube.com/watch?v=GWCldYPEsl4" target="_blank" rel="noopener noreferrer">
             <span className="highlight1"> esp</span>
             <span className="highlight2">añ</span>
             <span className="highlight3">ola </span>
-            echas con el dedo to cutres?
+            </a>
+            hechas con el dedo to cutres?
           </h1>
+          <h2 className="excalidraw-text">
+            Dibujadas en:
+          </h2>
+          <a href="https://excalidraw.com/" target="_blank" rel="noopener noreferrer">
+           <img src={excalidraw} alt="Excalidraw" className="excalidraw" />
+          </a>
+          <h2 className="photopea-text">
+            Editadas en:
+          </h2>
+          <a href="https://www.photopea.com/" target="_blank" rel="noopener noreferrer">
+            <img src={photopea} alt="Photopea" className="photopea" />
+          </a>
           <div className='popup2'>
             <img src={cartiatas} alt="Juego de cartas" className="titulo" />
             <h2>Introduce tu nombre:</h2>
@@ -165,7 +189,14 @@ function Game() {
       ) : (
         <div className="game-container">
           <img src={cartiatas} alt="Juego de cartas" className="titulo2" />
-          <h1>Hola <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{nombre}</a>!!</h1>
+          <h1>Hola <a 
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            {nombre}
+          </a>!!
+          </h1>
           
           <label htmlFor="cards"><h2>Elije las cartas que quieres que se muestren:</h2></label>
           <select
@@ -181,14 +212,26 @@ function Game() {
           </select>
           
           <h1>Cartas de <span className="highlight4">{paloSeleccionado}</span>:</h1>
-          <button className="botonClear" onClick={() => setPaloSeleccionado("")}>Limpiar</button>
+          <button 
+            className="botonClear" 
+            onClick={limpiarJuego}
+          >
+            {cartasBarajadas.length > 0 ? "Cerrar Juego" : "Limpiar"}
+          </button>
           <button className="random" onClick={barajarCartas}>Barajar Cartas</button>
 
           {cartasBarajadas.length > 0 && (
             <div className="contador-pares">
-              Pares encontrados: {paresEncontrados} de 8
-            </div>
+            Pares encontrados: {paresEncontrados} de 8
+          
+            {paresEncontrados === 8 && (
+              <div className="ganador">
+                <h2>¡Felicidades, {nombre}! Has encontrado todos los pares.</h2>
+              </div>
+            )}
+          </div>
           )}
+
 
           <div className="carta-container">
             {cartasBarajadas.length > 0 ? (
@@ -219,7 +262,13 @@ function Game() {
       )}
       
       <footer className="footer">
-        <p>© 2025 Cartitas - <a href="https://www.linkedin.com/in/ethan-hernandez-botia/">Ethan Hernández Botia</a> -</p>
+        <p>© 2025 Cartitas - <a 
+        href="https://www.linkedin.com/in/ethan-hernandez-botia/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Ethan Hernández Botia
+      </a> -</p>
       </footer>
     </div>
   );

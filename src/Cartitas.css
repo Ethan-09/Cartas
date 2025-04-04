@@ -12,6 +12,45 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.excalidraw{
+  position: absolute;
+  top: 71%;
+  width: 20%;
+  border-radius: 5px;
+  left: 40%;
+  
+}
+.excalidraw-text{
+  position: absolute;
+  top: 65%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  font-family: "Sour Gummy", sans-serif;
+}
+  .excalidraw-text{
+    position: absolute;
+    top: 65%;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    font-family: "Sour Gummy", sans-serif;
+  }
+  .photopea{
+    position: absolute;
+    top: 83%;
+    width: 20%;
+    border-radius: 5px;
+    left:40%;
+  }
+  .photopea-text{
+    position: absolute;
+    top: 77%;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    font-family: "Sour Gummy", sans-serif;
+  }
 
 .popup {
   position: fixed;
@@ -27,8 +66,8 @@ body {
 
 .popup div {
   background: rgb(39, 44, 141);
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 450px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -37,14 +76,16 @@ body {
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   font-family: "Sour Gummy", sans-serif;
+  position: relative;
+  bottom: 13%;
 }
 
 .popup h1 {
-  font-size: 35px;
+  font-size: 45px;
   color: white;
   text-align: center;
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 50%;
   width: 45%;
   transform: translate(-50%, -50%);
@@ -59,7 +100,7 @@ body {
 }
 
 .popup input {
-  width: 87%;
+  width: 85%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -68,7 +109,7 @@ body {
 }
 
 .popup button {
-  width: 95%;
+  width: 90%;
   background: #357937;
   color: white;
   border: none;
@@ -90,7 +131,7 @@ body {
 }
 
 .titulo, .titulo2 {
-  width: 300px;
+  width: 500px;
   height: auto;
   display: block;
   margin: 0 auto;
