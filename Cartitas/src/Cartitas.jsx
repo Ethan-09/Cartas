@@ -56,7 +56,6 @@ function Game() {
   const [paresEncontrados, setParesEncontrados] = useState(0);
   const [bloqueado, setBloqueado] = useState(false);
 
-  
   const cartasPorPalo = {
     espadas: [carta1, carta2, carta3, carta4, carta5, carta6, carta7, carta10, carta11, carta12],
     bastos: [bastos1, bastos2, bastos3, bastos4, bastos5, bastos6, bastos7, bastos10, bastos11, bastos12],
@@ -76,7 +75,7 @@ function Game() {
   };
 
   const barajarCartas = () => {
-    const valoresConDibujos = [0, 9, 10, 11]; 
+    const valoresConDibujos = [0, 9, 10, 11]; // Índices para 1, 10, 11, 12
     let cartasSeleccionadas = [];
 
     Object.values(cartasPorPalo).forEach(palo => {
@@ -148,6 +147,7 @@ function Game() {
     setCartasPareja([]);
     setParesEncontrados(0);
   };
+
   return (
     <div>
       {mostrarPopup ? (
@@ -184,7 +184,6 @@ function Game() {
               onKeyDown={(e) => e.key === 'Enter' && handleConfirmar()}
             />
             <button className="botonPopUp" onClick={handleConfirmar}>Confirmar</button>
-            <button className="registro" onClick={() => navigate("/login")}>Regístrate</button>
           </div>
         </div>
       ) : (
@@ -210,7 +209,8 @@ function Game() {
             <option value="bastos">Bastos</option>
             <option value="copas">Copas</option>
             <option value="oros">Oros</option>
-          </select>          
+          </select>
+          
           <h1>Cartas de <span className="highlight4">{paloSeleccionado}</span>:</h1>
           <button 
             className="botonClear" 
