@@ -3,13 +3,14 @@ import {Image, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
     titleImage: {
-        width: 100,
+        width: 600,
+        height: 200
 
     },
 
   });
   
-  const localImage = require('../assets/cartiatas.png');
+const localImage = require('../assets/cartiatas.png');
 
 export const MainScreen = () =>{
 
